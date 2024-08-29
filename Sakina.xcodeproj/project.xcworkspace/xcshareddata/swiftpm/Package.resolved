@@ -1,0 +1,15 @@
+{
+  "originHash" : "5c1749671509487feae5451ea3cae71b9a8e5b63164caecba97a58993259b8ec",
+  "pins" : [
+    {
+      "identity" : "dependencypreview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rayanwaked/DependencyPreview.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "50a555f1fb92b088571e62a6d89015c21de484ff"
+      }
+    }
+  ],
+  "version" : 3
+}
