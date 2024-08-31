@@ -26,7 +26,6 @@
 // MARK: - IMPORT
 import AVFoundation
 import Vision
-
 // MARK: - VIEW MODEL
 class ScannerViewModel: ObservableObject {
     @Published private(set) var model = ScanModel()
@@ -46,7 +45,6 @@ class ScannerViewModel: ObservableObject {
         model.recognizedText.removeAll()
     }
 }
-
 // MARK: - PERFORM RECOGNITION
 private extension ScannerViewModel {
     func performTextRecognition(_ image: CGImage) {
@@ -73,7 +71,6 @@ private extension ScannerViewModel {
         }
     }
 }
-
 // MARK: - SCANNER DELEGATE
 extension ScannerViewModel: ScanManagerDelegate {
     func scanManagerDidCapturePhoto(_ image: CGImage) {

@@ -6,11 +6,10 @@
 //
 
 // MARK: - IMPORT
-import Foundation
 import SwiftUI
 
 struct SomethingModel {
-    var somethingToSay: String = ""
+    var something: String = ""
 }
 
 protocol SomethingManagerDelegate: AnyObject {
@@ -21,29 +20,29 @@ class SomethingManager {
     weak var delegate: SomethingManagerDelegate?
     
     func saySomething() {
-        delegate?.somethingManagerSaidSomething("Hi")
+        delegate?.somethingManagerSaidSomething("Hello")
     }
 }
 
 class SomethingViewModel: ObservableObject, SomethingManagerDelegate {
     @Published private(set) var model = SomethingModel()
-    let manager: SomethingManager
+    var manager: SomethingManager
     
-    init(_ manager: SomethingManager = .init()) {
+    init(manager: SomethingManager = .init()) {
         self.manager = manager
         manager.delegate = self
     }
     
     func somethingManagerSaidSomething(_ something: String) {
-        model.somethingToSay = something
+        model.something = something
     }
 }
 
 struct SomethingView: View {
-    @ObservedObject var viewModel = SomethingViewModel()
-    
+    @StateObject var viewModel = SomethingViewModel()
+        
     var body: some View {
-        Text(viewModel.model.somethingToSay)
+        Text(viewModel.model.something)
         Button("Say Something") {
             viewModel.manager.saySomething()
         }

@@ -10,6 +10,8 @@ import SwiftUI
 
 // MARK: - VIEW
 struct ProductView: View {
+    @ObservedObject var viewModel: ScannerViewModel
+    
     var body: some View {
         content
     }
@@ -19,8 +21,6 @@ struct ProductView: View {
 private extension ProductView {
     var content: some View {
         VStack {
-            title
-            Divider()
             synopsis
             Divider()
             ingredients
@@ -32,23 +32,18 @@ private extension ProductView {
 
 // MARK: - COMPONENTS
 private extension ProductView {
-    // Title
-    var title: some View {
-        Text("Protein Shake")
-    }
-    
     // Synopsis
     var synopsis: some View {
-        Text("Gluten")
+        Text("This product contains Gluten")
     }
     
     // Ingredients
     var ingredients: some View {
-        Text("Wheat")
+        Text("\(viewModel.model.recognizedText)")
     }
 }
 
 // MARK: - PREVIEW
 #Preview {
-    ProductView()
+    ProductView(viewModel: ScannerViewModel())
 }

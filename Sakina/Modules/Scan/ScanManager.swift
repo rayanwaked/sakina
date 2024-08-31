@@ -40,6 +40,8 @@ class ScanManager: NSObject {
     let sessionQueue = DispatchQueue(label: "sessionQueue")
     let capturePhotoOutput = AVCapturePhotoOutput()
     
+    var cropRect: CGRect?
+    
     override init() {
         super.init()
         setupCaptureSession()
@@ -88,6 +90,23 @@ class ScanManager: NSObject {
         guard session.isRunning else { return }
         let settings = AVCapturePhotoSettings()
         capturePhotoOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
+    func setCropRect(_ rect: CGRect) {
+            cropRect = rect
+        }
+        
+        private func cropToSquare(_ inputImage: CGImage) -> CGImage? {
+            let width = inputImage.width
+            let height = inputImage.height
+            let size = min(width, height)
+            
+            let x = (width - size) / 2
+            let y = (height - size) / 2
+            
+            let cropRect = cropRect ?? CGRect(x: x, y: y, width: size, height: size)
+            
+            return inputImage.cropping(to: cropRect)
     }
 }
 

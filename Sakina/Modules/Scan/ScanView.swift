@@ -14,9 +14,13 @@ struct ScanView: View {
     @StateObject private var viewModel = ScannerViewModel()
     
     var body: some View {
-        content
-        .onAppear {
-            viewModel.checkCameraPermission()
+        if viewModel.model.recognizedText.isEmpty {
+            content
+                .onAppear {
+                    viewModel.checkCameraPermission()
+                }
+        } else {
+            ProductView(viewModel: viewModel)
         }
     }
 }
@@ -24,33 +28,52 @@ struct ScanView: View {
 // MARK: - CONTENT
 private extension ScanView {
     var content: some View {
-        VStack {
+        ZStack {
             scanner
-            scanButton
-            ingredients
+            squareOverlay
+            VStack {
+                Spacer()
+                scanButton
+            }
         }
     }
 }
 
 // MARK: - COMPONENTS
 private extension ScanView {
-    var title: some View {
-        Text("Hi")
-    }
-    
     var scanner: some View {
         Camera(session: viewModel.scanManager.session)
-            .aspectRatio(3/4, contentMode: .fit)
+            .frame(width: width, height: height)
+            .clipShape(Rectangle())
+    }
+    
+    var squareOverlay: some View {
+        GeometryReader { geometry in
+            let squareSize = min(width, height) * 0.8
+            let origin = CGPoint(
+                x: (width - squareSize) / 2,
+                y: (height - squareSize) / 2
+            )
+            let rect = CGRect(origin: origin, size: CGSize(width: squareSize, height: squareSize))
+            
+            Rectangle()
+                .stroke(Color.white, lineWidth: 2)
+                .frame(width: squareSize, height: squareSize)
+                .position(x: width / 2, y: height / 2)
+                .onAppear {
+                    viewModel.scanManager.setCropRect(rect)
+                }
+        }
     }
     
     var scanButton: some View {
         Button("Scan Text") {
             viewModel.scanText()
         }
-    }
-    
-    var ingredients: some View {
-        Text("\(viewModel.model.recognizedText)")
+        .padding()
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .cornerRadius(10)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B951499C2C83974C00BB8CAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B951499B2C83974C00BB8CAF /* Constants.swift */; };
 		B9C0F5DB2C7FD02D005C9154 /* DependencyPreview in Frameworks */ = {isa = PBXBuildFile; productRef = B9C0F5DA2C7FD02D005C9154 /* DependencyPreview */; };
 		B9D374DA2C7E795A0042DA25 /* SakinaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374D92C7E795A0042DA25 /* SakinaApp.swift */; };
 		B9D374DC2C7E795A0042DA25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374DB2C7E795A0042DA25 /* ContentView.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B951499B2C83974C00BB8CAF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B9D374D62C7E795A0042DA25 /* Sakina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sakina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D374D92C7E795A0042DA25 /* SakinaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SakinaApp.swift; sourceTree = "<group>"; };
 		B9D374DB2C7E795A0042DA25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 		B9D374E72C7E796E0042DA25 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B951499B2C83974C00BB8CAF /* Constants.swift */,
 				B9D374DD2C7E795B0042DA25 /* Assets.xcassets */,
 				B9D374DF2C7E795B0042DA25 /* Preview Content */,
 			);
@@ -240,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D374F82C7E82DB0042DA25 /* ProductView.swift in Sources */,
+				B951499C2C83974C00BB8CAF /* Constants.swift in Sources */,
 				B9D374DC2C7E795A0042DA25 /* ContentView.swift in Sources */,
 				B9D374EF2C7E7DAD0042DA25 /* HomeView.swift in Sources */,
 				B9D374F12C7E7DB40042DA25 /* ScanView.swift in Sources */,
