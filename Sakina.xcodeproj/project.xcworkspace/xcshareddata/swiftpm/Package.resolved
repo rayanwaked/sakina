@@ -1,5 +1,5 @@
 {
-  "originHash" : "5c1749671509487feae5451ea3cae71b9a8e5b63164caecba97a58993259b8ec",
+  "originHash" : "1bfd880fc745c189c680f7e5bb66c2de41ebd400f77ec62c5f4498e9f51dec1a",
   "pins" : [
     {
       "identity" : "dependencypreview",
@@ -8,6 +8,24 @@
       "state" : {
         "branch" : "main",
         "revision" : "50a555f1fb92b088571e62a6d89015c21de484ff"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "41982a3656a71c768319979febd796c6fd111d5c",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "swift-transformers",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/huggingface/swift-transformers.git",
+      "state" : {
+        "revision" : "e72d032ed742dcc8b364780ce4e02b25ab7a09b0",
+        "version" : "0.1.9"
       }
     }
   ],

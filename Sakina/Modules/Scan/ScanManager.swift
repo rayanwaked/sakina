@@ -27,7 +27,7 @@
 import AVFoundation
 import UIKit
 
-// MARK: - PROTOCOL
+// MARK: - DELEGATE PROTOCOL
 protocol ScanManagerDelegate: AnyObject {
     func scanManagerDidCapturePhoto(_ image: CGImage)
 }

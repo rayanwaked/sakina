@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B951499C2C83974C00BB8CAF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B951499B2C83974C00BB8CAF /* Constants.swift */; };
+		B9545F312C83A076006D4A92 /* Transformers in Frameworks */ = {isa = PBXBuildFile; productRef = B9545F302C83A076006D4A92 /* Transformers */; };
 		B9C0F5DB2C7FD02D005C9154 /* DependencyPreview in Frameworks */ = {isa = PBXBuildFile; productRef = B9C0F5DA2C7FD02D005C9154 /* DependencyPreview */; };
 		B9D374DA2C7E795A0042DA25 /* SakinaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374D92C7E795A0042DA25 /* SakinaApp.swift */; };
 		B9D374DC2C7E795A0042DA25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374DB2C7E795A0042DA25 /* ContentView.swift */; };
@@ -17,7 +18,6 @@
 		B9D374EF2C7E7DAD0042DA25 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374EE2C7E7DAD0042DA25 /* HomeView.swift */; };
 		B9D374F12C7E7DB40042DA25 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374F02C7E7DB40042DA25 /* ScanView.swift */; };
 		B9D374F32C7E7DBE0042DA25 /* ScanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374F22C7E7DBE0042DA25 /* ScanModel.swift */; };
-		B9D374F62C7E82D30042DA25 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374F52C7E82D30042DA25 /* ProductModel.swift */; };
 		B9D374F82C7E82DB0042DA25 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374F72C7E82DB0042DA25 /* ProductView.swift */; };
 		B9D375002C7EA4670042DA25 /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D374FF2C7EA4670042DA25 /* ScanViewModel.swift */; };
 		B9D375022C7EA7310042DA25 /* ScanManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D375012C7EA7310042DA25 /* ScanManager.swift */; };
@@ -34,7 +34,6 @@
 		B9D374EE2C7E7DAD0042DA25 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B9D374F02C7E7DB40042DA25 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		B9D374F22C7E7DBE0042DA25 /* ScanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanModel.swift; sourceTree = "<group>"; };
-		B9D374F52C7E82D30042DA25 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		B9D374F72C7E82DB0042DA25 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		B9D374FC2C7E9A510042DA25 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B9D374FD2C7E9A650042DA25 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
@@ -48,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9545F312C83A076006D4A92 /* Transformers in Frameworks */,
 				B9C0F5DB2C7FD02D005C9154 /* DependencyPreview in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,7 +109,6 @@
 				B9D374DB2C7E795A0042DA25 /* ContentView.swift */,
 				B9D374E92C7E7CF60042DA25 /* Home */,
 				B9D374EA2C7E7CFA0042DA25 /* Scan */,
-				B9D374F42C7E809E0042DA25 /* Product */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -130,6 +129,7 @@
 				B9D374FF2C7EA4670042DA25 /* ScanViewModel.swift */,
 				B9D375012C7EA7310042DA25 /* ScanManager.swift */,
 				B9D374F02C7E7DB40042DA25 /* ScanView.swift */,
+				B9D374F42C7E809E0042DA25 /* Product */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -137,7 +137,6 @@
 		B9D374F42C7E809E0042DA25 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				B9D374F52C7E82D30042DA25 /* ProductModel.swift */,
 				B9D374F72C7E82DB0042DA25 /* ProductView.swift */,
 			);
 			path = Product;
@@ -184,6 +183,7 @@
 			name = Sakina;
 			packageProductDependencies = (
 				B9C0F5DA2C7FD02D005C9154 /* DependencyPreview */,
+				B9545F302C83A076006D4A92 /* Transformers */,
 			);
 			productName = Sakina;
 			productReference = B9D374D62C7E795A0042DA25 /* Sakina.app */;
@@ -215,6 +215,7 @@
 			mainGroup = B9D374CD2C7E795A0042DA25;
 			packageReferences = (
 				B9C0F5D92C7FD02D005C9154 /* XCRemoteSwiftPackageReference "DependencyPreview" */,
+				B9545F2F2C83A076006D4A92 /* XCRemoteSwiftPackageReference "swift-transformers" */,
 			);
 			productRefGroup = B9D374D72C7E795A0042DA25 /* Products */;
 			projectDirPath = "";
@@ -251,7 +252,6 @@
 				B9D374DA2C7E795A0042DA25 /* SakinaApp.swift in Sources */,
 				B9D375022C7EA7310042DA25 /* ScanManager.swift in Sources */,
 				B9D374F32C7E7DBE0042DA25 /* ScanModel.swift in Sources */,
-				B9D374F62C7E82D30042DA25 /* ProductModel.swift in Sources */,
 				B9D374EC2C7E7D9E0042DA25 /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,6 +478,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B9545F2F2C83A076006D4A92 /* XCRemoteSwiftPackageReference "swift-transformers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huggingface/swift-transformers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
 		B9C0F5D92C7FD02D005C9154 /* XCRemoteSwiftPackageReference "DependencyPreview" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/rayanwaked/DependencyPreview.git";
@@ -489,6 +497,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B9545F302C83A076006D4A92 /* Transformers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B9545F2F2C83A076006D4A92 /* XCRemoteSwiftPackageReference "swift-transformers" */;
+			productName = Transformers;
+		};
 		B9C0F5DA2C7FD02D005C9154 /* DependencyPreview */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B9C0F5D92C7FD02D005C9154 /* XCRemoteSwiftPackageReference "DependencyPreview" */;

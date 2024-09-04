@@ -11,5 +11,7 @@ import SwiftUI
 
 // MARK: - MODEL
 struct ScanModel {
-    var recognizedText: Array = [""]
+    var recognizedText: [String] = []
+    var problematicIngredients: [String] = ["Water"]
+    var isProblematic: Bool = false
 }

@@ -26,7 +26,8 @@
 // MARK: - IMPORT
 import AVFoundation
 import Vision
-// MARK: - VIEW MODEL
+
+// MARK: - VIEWMODEL
 class ScannerViewModel: ObservableObject {
     @Published private(set) var model = ScanModel()
     let scanManager: ScanManager
@@ -45,6 +46,7 @@ class ScannerViewModel: ObservableObject {
         model.recognizedText.removeAll()
     }
 }
+
 // MARK: - PERFORM RECOGNITION
 private extension ScannerViewModel {
     func performTextRecognition(_ image: CGImage) {
@@ -53,6 +55,7 @@ private extension ScannerViewModel {
             let recognizedStrings = observations.compactMap { $0.topCandidates(1).first?.string }
             DispatchQueue.main.async {
                 self?.model.recognizedText.append(recognizedStrings.joined(separator: ", "))
+                self?.model.isProblematic = ((self?.checkForProblematicIngredients(recognizedStrings)) ?? false)
             }
         }
         
@@ -71,6 +74,14 @@ private extension ScannerViewModel {
         }
     }
 }
+
+// MARK: - FIND IF PROBLEMATIC
+extension ScannerViewModel {
+    func checkForProblematicIngredients(_ ingredients: [String]) -> Bool {
+        return ingredients.contains(where: {model.problematicIngredients.contains($0)} )
+    }
+}
+
 // MARK: - SCANNER DELEGATE
 extension ScannerViewModel: ScanManagerDelegate {
     func scanManagerDidCapturePhoto(_ image: CGImage) {

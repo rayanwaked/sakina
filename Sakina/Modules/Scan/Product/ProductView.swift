@@ -34,7 +34,11 @@ private extension ProductView {
 private extension ProductView {
     // Synopsis
     var synopsis: some View {
-        Text("This product contains Gluten")
+        if viewModel.model.isProblematic {
+            Text("Caution: This item contains ingredients you want to avoid")
+        } else {
+            Text("You're good to go!")
+        }
     }
     
     // Ingredients

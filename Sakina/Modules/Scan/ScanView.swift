@@ -34,6 +34,7 @@ private extension ScanView {
             VStack {
                 Spacer()
                 scanButton
+                    .padding(.bottom, height * 0.25)
             }
         }
     }
