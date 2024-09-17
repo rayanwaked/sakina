@@ -79,7 +79,6 @@
 				B9D374FE2C7E9D830042DA25 /* Info.plist */,
 				B9D374D92C7E795A0042DA25 /* SakinaApp.swift */,
 				B9D374E82C7E79D10042DA25 /* Modules */,
-				B9D374F92C7E82E40042DA25 /* Shared */,
 				B9D374E72C7E796E0042DA25 /* Assets */,
 			);
 			path = Sakina;
@@ -140,29 +139,6 @@
 				B9D374F72C7E82DB0042DA25 /* ProductView.swift */,
 			);
 			path = Product;
-			sourceTree = "<group>";
-		};
-		B9D374F92C7E82E40042DA25 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				B9D374FB2C7E9A0B0042DA25 /* Interface */,
-				B9D374FA2C7E82F30042DA25 /* Functionality */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
-		B9D374FA2C7E82F30042DA25 /* Functionality */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Functionality;
-			sourceTree = "<group>";
-		};
-		B9D374FB2C7E9A0B0042DA25 /* Interface */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
